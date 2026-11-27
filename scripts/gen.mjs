@@ -20,8 +20,8 @@ writeFileSync(
   `${header}export type Statistic = { kind: "total" | "average"; unit: string; additive: boolean };\nexport const STATISTICS: Record<string, Statistic> = ${JSON.stringify(statistics, null, 2)};\n`,
 );
 
-const palette = load("palette.json", []);
+const palette = load("palette.json", { light: [], dark: [] });
 writeFileSync(
   join(out, "palette.ts"),
-  `${header}export const PALETTE: string[] = ${JSON.stringify(palette, null, 2)};\n`,
+  `${header}export const PALETTE: { light: readonly string[]; dark: readonly string[] } = ${JSON.stringify(palette, null, 2)};\n`,
 );

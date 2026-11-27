@@ -1,1 +1,4 @@
-export declare const PALETTE: string[];
+export declare const PALETTE: {
+    light: readonly string[];
+    dark: readonly string[];
+};
