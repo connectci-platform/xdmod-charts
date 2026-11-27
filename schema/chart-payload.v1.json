@@ -1,0 +1,319 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/connectci-platform/xdmod-charts/schema/chart-payload.v1.json",
+  "title": "XDMoD chart payload v1",
+  "description": "The chart a get_chart_data tool result carries. Version policy: the contract stays version 1 and changes only add optional fields. Enumerated fields are closed: a client that meets a value it does not know shows no chart and the text answer stands. A client ignores fields it does not know, so additionalProperties is not restricted.",
+  "type": "object",
+  "required": [
+    "version",
+    "realm",
+    "statistic",
+    "group_by",
+    "dataset_type",
+    "requested",
+    "counted",
+    "last_period_incomplete",
+    "measure",
+    "dimension",
+    "filters",
+    "has_more",
+    "source",
+    "retrieved"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "realm": {
+      "type": "string"
+    },
+    "statistic": {
+      "type": "string"
+    },
+    "group_by": {
+      "type": "string"
+    },
+    "dataset_type": {
+      "enum": [
+        "timeseries",
+        "aggregate"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "Day",
+        "Week",
+        "Month",
+        "Quarter",
+        "Year"
+      ]
+    },
+    "requested": {
+      "type": "object",
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        }
+      }
+    },
+    "counted": {
+      "type": "object",
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        }
+      }
+    },
+    "last_period_incomplete": {
+      "type": "boolean"
+    },
+    "measure": {
+      "type": "object",
+      "required": [
+        "label",
+        "description",
+        "kind",
+        "missing"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "total",
+            "average"
+          ]
+        },
+        "missing": {
+          "enum": [
+            "zero",
+            "gap"
+          ]
+        },
+        "unit": {
+          "type": "string"
+        }
+      }
+    },
+    "dimension": {
+      "type": "object",
+      "required": [
+        "name",
+        "ordered"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ordered": {
+          "type": "boolean"
+        }
+      }
+    },
+    "filters": {
+      "type": "object",
+      "required": [
+        "notes"
+      ],
+      "properties": {
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "time_basis": {
+      "type": "object",
+      "required": [
+        "zone"
+      ],
+      "properties": {
+        "zone": {
+          "type": "string"
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "text"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "instance": {
+      "type": "object",
+      "required": [
+        "name",
+        "url"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "series": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "points"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "start",
+                "value"
+              ],
+              "properties": {
+                "start": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "data_through": {
+            "type": "string"
+          },
+          "data_through_precision": {
+            "enum": [
+              "day",
+              "period"
+            ]
+          },
+          "data_through_source": {
+            "enum": [
+              "resource",
+              "series"
+            ]
+          }
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "value"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "data_through": {
+            "type": "string"
+          },
+          "data_through_source": {
+            "enum": [
+              "resource",
+              "series"
+            ]
+          }
+        }
+      }
+    },
+    "offset": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "others_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "data_through": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "data_through_precision": {
+      "enum": [
+        "day",
+        "period",
+        null
+      ]
+    },
+    "last_data_period_partial": {
+      "type": "boolean"
+    },
+    "has_more": {
+      "type": "boolean"
+    },
+    "ranked_by": {
+      "const": "value"
+    },
+    "link": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source": {
+      "const": "XDMoD"
+    },
+    "retrieved": {
+      "type": "string"
+    }
+  }
+}
