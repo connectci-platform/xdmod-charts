@@ -1,6 +1,6 @@
 {
   "name": "@connectci/xdmod-charts",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared XDMoD chart payload contract: schema, types and parser.",
   "license": "MIT",
   "type": "module",

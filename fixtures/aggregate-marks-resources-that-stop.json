@@ -1,0 +1,125 @@
+{
+  "description": "A category whose resource's last day is before the chart's end is marked source resource; one before the range start is not.",
+  "producers": [
+    "ts",
+    "py"
+  ],
+  "input": {
+    "request": {
+      "realm": "Jobs",
+      "statistic": "job_count",
+      "group_by": "resource",
+      "dataset_type": "aggregate",
+      "start_date": "2026-10-01",
+      "end_date": "2026-11-09",
+      "filters_notes": [],
+      "dimension_filtered": false,
+      "offset": 0,
+      "limit": 10,
+      "unit": "Month"
+    },
+    "label": "Number of Jobs Ended",
+    "description": "Jobs run",
+    "today": "2026-11-09",
+    "others_count": 0,
+    "has_more": false,
+    "latest_data_day": "2026-11-08",
+    "resource_days": {
+      "since": "2026-07-13",
+      "days": {
+        "cluster-a": "2026-11-08",
+        "cluster-b": "2026-10-19",
+        "cluster-c": "2026-09-01"
+      }
+    },
+    "link": "https://xdmod.example/chart",
+    "time_zone": "America/New_York",
+    "instance": {
+      "name": "ACCESS XDMoD",
+      "url": "https://xdmod.access-ci.org"
+    },
+    "categories": [
+      {
+        "name": "cluster-a",
+        "value": 3
+      },
+      {
+        "name": "cluster-b",
+        "value": 2
+      },
+      {
+        "name": "cluster-c",
+        "value": 1
+      }
+    ]
+  },
+  "expected": {
+    "version": 1,
+    "realm": "Jobs",
+    "statistic": "job_count",
+    "group_by": "resource",
+    "dataset_type": "aggregate",
+    "requested": {
+      "start": "2026-10-01",
+      "end": "2026-11-09"
+    },
+    "counted": {
+      "start": "2026-10-01",
+      "end": "2026-11-09"
+    },
+    "last_period_incomplete": true,
+    "measure": {
+      "label": "Number of Jobs Ended",
+      "description": "Jobs run",
+      "kind": "total",
+      "missing": "zero",
+      "unit": "jobs"
+    },
+    "dimension": {
+      "name": "resource",
+      "ordered": false
+    },
+    "filters": {
+      "notes": []
+    },
+    "time_basis": {
+      "zone": "America/New_York"
+    },
+    "instance": {
+      "name": "ACCESS XDMoD",
+      "url": "https://xdmod.access-ci.org"
+    },
+    "warnings": [
+      {
+        "code": "waiting-not-counted",
+        "text": "Jobs still waiting aren't counted, and the last few days may be incomplete."
+      }
+    ],
+    "offset": 0,
+    "data_through": "2026-11-08",
+    "data_through_precision": "day",
+    "others_count": 0,
+    "last_data_period_partial": false,
+    "has_more": false,
+    "ranked_by": "value",
+    "link": "https://xdmod.example/chart",
+    "source": "XDMoD",
+    "retrieved": "2026-11-09",
+    "categories": [
+      {
+        "name": "cluster-a",
+        "value": 3
+      },
+      {
+        "name": "cluster-b",
+        "value": 2,
+        "data_through": "2026-10-19",
+        "data_through_source": "resource"
+      },
+      {
+        "name": "cluster-c",
+        "value": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "description": "An aggregate with no data has no categories.",
+  "producers": [
+    "ts",
+    "py"
+  ],
+  "input": {
+    "request": {
+      "realm": "Jobs",
+      "statistic": "job_count",
+      "group_by": "resource",
+      "dataset_type": "aggregate",
+      "start_date": "2026-08-01",
+      "end_date": "2026-11-08",
+      "filters_notes": [],
+      "dimension_filtered": false,
+      "offset": 0,
+      "limit": 10,
+      "unit": "Month"
+    },
+    "label": "Number of Jobs Ended",
+    "description": "Jobs run",
+    "today": "2026-11-09",
+    "others_count": 0,
+    "has_more": false,
+    "latest_data_day": null,
+    "resource_days": null,
+    "link": "https://xdmod.example/chart",
+    "time_zone": "America/New_York",
+    "instance": {
+      "name": "ACCESS XDMoD",
+      "url": "https://xdmod.access-ci.org"
+    },
+    "categories": []
+  },
+  "expected": {
+    "version": 1,
+    "realm": "Jobs",
+    "statistic": "job_count",
+    "group_by": "resource",
+    "dataset_type": "aggregate",
+    "requested": {
+      "start": "2026-08-01",
+      "end": "2026-11-08"
+    },
+    "counted": {
+      "start": "2026-08-01",
+      "end": "2026-11-08"
+    },
+    "last_period_incomplete": false,
+    "measure": {
+      "label": "Number of Jobs Ended",
+      "description": "Jobs run",
+      "kind": "total",
+      "missing": "zero",
+      "unit": "jobs"
+    },
+    "dimension": {
+      "name": "resource",
+      "ordered": false
+    },
+    "filters": {
+      "notes": []
+    },
+    "time_basis": {
+      "zone": "America/New_York"
+    },
+    "instance": {
+      "name": "ACCESS XDMoD",
+      "url": "https://xdmod.access-ci.org"
+    },
+    "warnings": [],
+    "offset": 0,
+    "data_through": null,
+    "data_through_precision": null,
+    "others_count": 0,
+    "last_data_period_partial": false,
+    "has_more": false,
+    "ranked_by": "value",
+    "link": "https://xdmod.example/chart",
+    "source": "XDMoD",
+    "retrieved": "2026-11-09",
+    "categories": []
+  }
+}

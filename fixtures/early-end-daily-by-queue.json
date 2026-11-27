@@ -1,0 +1,180 @@
+{
+  "description": "A daily chart by queue: queues that stop keep gaps and are marked with their last day, source series.",
+  "producers": [
+    "ts",
+    "py"
+  ],
+  "input": {
+    "request": {
+      "realm": "Jobs",
+      "statistic": "job_count",
+      "group_by": "queue",
+      "dataset_type": "timeseries",
+      "start_date": "2026-10-18",
+      "end_date": "2026-10-21",
+      "filters_notes": [],
+      "dimension_filtered": false,
+      "offset": 0,
+      "limit": 10,
+      "unit": "Day"
+    },
+    "label": "Number of Jobs Ended",
+    "description": "Jobs run",
+    "today": "2026-11-09",
+    "others_count": 0,
+    "has_more": false,
+    "latest_data_day": null,
+    "resource_days": null,
+    "link": "https://xdmod.example/chart",
+    "time_zone": "America/New_York",
+    "instance": {
+      "name": "ACCESS XDMoD",
+      "url": "https://xdmod.access-ci.org"
+    },
+    "series": [
+      {
+        "name": "queue-a",
+        "values": {
+          "2026-10-18": 1,
+          "2026-10-19": 2,
+          "2026-10-20": 3,
+          "2026-10-21": 4
+        }
+      },
+      {
+        "name": "queue-b",
+        "values": {
+          "2026-10-18": 7,
+          "2026-10-19": 8
+        }
+      },
+      {
+        "name": "queue-c",
+        "values": {
+          "2026-10-18": 7,
+          "2026-10-19": 8
+        }
+      }
+    ]
+  },
+  "expected": {
+    "version": 1,
+    "realm": "Jobs",
+    "statistic": "job_count",
+    "group_by": "queue",
+    "dataset_type": "timeseries",
+    "unit": "Day",
+    "requested": {
+      "start": "2026-10-18",
+      "end": "2026-10-21"
+    },
+    "counted": {
+      "start": "2026-10-18",
+      "end": "2026-10-21"
+    },
+    "last_period_incomplete": false,
+    "measure": {
+      "label": "Number of Jobs Ended",
+      "description": "Jobs run",
+      "kind": "total",
+      "missing": "zero",
+      "unit": "jobs"
+    },
+    "dimension": {
+      "name": "queue",
+      "ordered": false
+    },
+    "filters": {
+      "notes": []
+    },
+    "time_basis": {
+      "zone": "America/New_York"
+    },
+    "instance": {
+      "name": "ACCESS XDMoD",
+      "url": "https://xdmod.access-ci.org"
+    },
+    "warnings": [],
+    "offset": 0,
+    "data_through": "2026-10-21",
+    "data_through_precision": "day",
+    "others_count": 0,
+    "last_data_period_partial": false,
+    "has_more": false,
+    "ranked_by": "value",
+    "link": "https://xdmod.example/chart",
+    "source": "XDMoD",
+    "retrieved": "2026-11-09",
+    "series": [
+      {
+        "name": "queue-a",
+        "points": [
+          {
+            "start": "2026-10-18",
+            "value": 1
+          },
+          {
+            "start": "2026-10-19",
+            "value": 2
+          },
+          {
+            "start": "2026-10-20",
+            "value": 3
+          },
+          {
+            "start": "2026-10-21",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "name": "queue-b",
+        "points": [
+          {
+            "start": "2026-10-18",
+            "value": 7
+          },
+          {
+            "start": "2026-10-19",
+            "value": 8
+          },
+          {
+            "start": "2026-10-20",
+            "value": null
+          },
+          {
+            "start": "2026-10-21",
+            "value": null
+          }
+        ],
+        "data_through": "2026-10-19",
+        "data_through_precision": "day",
+        "data_through_source": "series"
+      },
+      {
+        "name": "queue-c",
+        "points": [
+          {
+            "start": "2026-10-18",
+            "value": 7
+          },
+          {
+            "start": "2026-10-19",
+            "value": 8
+          },
+          {
+            "start": "2026-10-20",
+            "value": null
+          },
+          {
+            "start": "2026-10-21",
+            "value": null
+          }
+        ],
+        "data_through": "2026-10-19",
+        "data_through_precision": "day",
+        "data_through_source": "series"
+      }
+    ]
+  }
+}

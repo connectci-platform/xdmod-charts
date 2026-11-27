@@ -1,0 +1,122 @@
+{
+  "description": "The last period with data is followed by empty periods: last_data_period_partial is true.",
+  "producers": [
+    "ts",
+    "py"
+  ],
+  "input": {
+    "request": {
+      "realm": "Jobs",
+      "statistic": "job_count",
+      "group_by": "resource",
+      "dataset_type": "timeseries",
+      "start_date": "2026-08-01",
+      "end_date": "2026-11-08",
+      "filters_notes": [],
+      "dimension_filtered": false,
+      "offset": 0,
+      "limit": 10,
+      "unit": "Month"
+    },
+    "label": "Number of Jobs Ended",
+    "description": "Jobs run",
+    "today": "2026-11-09",
+    "others_count": 0,
+    "has_more": false,
+    "latest_data_day": null,
+    "resource_days": null,
+    "link": "https://xdmod.example/chart",
+    "time_zone": "America/New_York",
+    "instance": {
+      "name": "ACCESS XDMoD",
+      "url": "https://xdmod.access-ci.org"
+    },
+    "series": [
+      {
+        "name": "Anvil",
+        "values": {
+          "2026-08-01": 12,
+          "2026-09-01": 11,
+          "2026-10-01": 0.05
+        }
+      }
+    ]
+  },
+  "expected": {
+    "version": 1,
+    "realm": "Jobs",
+    "statistic": "job_count",
+    "group_by": "resource",
+    "dataset_type": "timeseries",
+    "unit": "Month",
+    "requested": {
+      "start": "2026-08-01",
+      "end": "2026-11-08"
+    },
+    "counted": {
+      "start": "2026-08-01",
+      "end": "2026-11-30"
+    },
+    "last_period_incomplete": true,
+    "measure": {
+      "label": "Number of Jobs Ended",
+      "description": "Jobs run",
+      "kind": "total",
+      "missing": "zero",
+      "unit": "jobs"
+    },
+    "dimension": {
+      "name": "resource",
+      "ordered": false
+    },
+    "filters": {
+      "notes": []
+    },
+    "time_basis": {
+      "zone": "America/New_York"
+    },
+    "instance": {
+      "name": "ACCESS XDMoD",
+      "url": "https://xdmod.access-ci.org"
+    },
+    "warnings": [
+      {
+        "code": "waiting-not-counted",
+        "text": "Jobs still waiting aren't counted, and the last few days may be incomplete."
+      }
+    ],
+    "offset": 0,
+    "data_through": "2026-10-01",
+    "data_through_precision": "period",
+    "others_count": 0,
+    "last_data_period_partial": true,
+    "has_more": false,
+    "ranked_by": "value",
+    "link": "https://xdmod.example/chart",
+    "source": "XDMoD",
+    "retrieved": "2026-11-09",
+    "series": [
+      {
+        "name": "Anvil",
+        "points": [
+          {
+            "start": "2026-08-01",
+            "value": 12
+          },
+          {
+            "start": "2026-09-01",
+            "value": 11
+          },
+          {
+            "start": "2026-10-01",
+            "value": 0.05
+          },
+          {
+            "start": "2026-11-01",
+            "value": null
+          }
+        ]
+      }
+    ]
+  }
+}
