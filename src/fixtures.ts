@@ -1,6 +1,11 @@
 import type { ChartPayload, Unit } from "./payload.js";
 
-/** Everything a producer's pure builder is given: XDMoD's answers already fetched, no I/O left. */
+/**
+ * Everything a producer's pure builder is given: XDMoD's answers already fetched, no I/O left.
+ * `series` and `categories` are post-trim: the adapter (not the builder) drops gap-connector
+ * traces, "All N Others" entries and series with no values, applies the limit, and derives
+ * `has_more` and `others_count`, as access-mcp's trimToLimit does. `request.limit` is informational.
+ */
 export interface BuilderInput {
   request: {
     realm: string;
@@ -11,6 +16,8 @@ export interface BuilderInput {
     end_date: string;
     unit?: Unit;
     filters_notes: string[];
+    /** True when the request filters the group_by dimension itself. */
+    dimension_filtered: boolean;
     offset: number;
     limit: number;
   };

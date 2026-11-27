@@ -10,6 +10,7 @@
       "start_date": "2026-10-01",
       "end_date": "2026-10-31",
       "filters_notes": [],
+      "dimension_filtered": false,
       "offset": 0,
       "limit": 10
     },
