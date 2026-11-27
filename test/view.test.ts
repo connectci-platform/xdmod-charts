@@ -209,6 +209,11 @@ describe("new payload fields", () => {
     expect(BUILT_IN_WARNINGS.map((w) => w.code)).toEqual(["waiting-not-counted", "not-comparable-across-resources", "mean-of-jobs"]);
     expect(toView(payload({ realm: "Cloud" })).caption.warnings).toEqual([]);
   });
+  it("an empty warnings array shows no warnings even where the built-ins would apply", () => {
+    const v = toView(payload({ statistic: "avg_cpu_hours", last_period_incomplete: true, warnings: [] }));
+    expect(v.caption.warnings).toEqual([]);
+    expect(captionLines(v.caption, 1).join("\n")).not.toMatch(/waiting|average per job/);
+  });
   it("instance option overrides the payload's instance in the source line", () => {
     const p = payload({ instance: { name: "Payload XDMoD", url: "https://a.example.org" } });
     expect(captionLines(toView(p).caption, 1).at(-1)).toBe("Source: Payload XDMoD, retrieved Nov 9, 2026");

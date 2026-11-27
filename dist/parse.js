@@ -60,7 +60,7 @@ export function parsePayload(raw) {
     if (raw.warnings !== undefined && !isList(raw.warnings, isWarning))
         return null;
     if (raw.instance !== undefined &&
-        !(isRecord(raw.instance) && isString(raw.instance.name) && isString(raw.instance.url))) {
+        !(isRecord(raw.instance) && isString(raw.instance.name) && isString(raw.instance.url) && raw.instance.url.startsWith("https:"))) {
         return null;
     }
     if (!isNullableString(raw.link) || !isNullableString(raw.data_through))

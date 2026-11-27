@@ -11,7 +11,7 @@ const dir = new URL("./payloads/", import.meta.url);
 
 describe("the schema and parsePayload agree", () => {
   const files = readdirSync(dir).filter((f) => f.endsWith(".json"));
-  it("has ten payloads", () => expect(files.length).toBe(10));
+  it("has eleven payloads", () => expect(files.length).toBe(11));
   for (const f of files) {
     it(f, () => {
       const raw = JSON.parse(readFileSync(new URL(f, dir), "utf8"));

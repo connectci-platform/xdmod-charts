@@ -34,6 +34,12 @@ describe("parsePayload", () => {
     ts.series[0].points[0].value = "3";
     expect(parsePayload(ts)).toBeNull();
   });
+  it("rejects an instance url that is not https", () => {
+    expect(parsePayload(load("invalid-instance-url"))).toBeNull();
+    const p = load("valid-all-new-fields");
+    p.instance.url = "http://xdmod.example.org";
+    expect(parsePayload(p)).toBeNull();
+  });
   it("rejects a warning without text", () => {
     expect(parsePayload(load("invalid-warning-no-text"))).toBeNull();
   });
