@@ -10,4 +10,4 @@ Each `fixtures/<name>.json` is one case for a producer's payload builder:
 
 Comparison rule: deep equality between the builder's output and `expected`, except `warnings`. For `warnings` only the ordered list of `code`s is compared. The text is each producer's own.
 
-Fixtures use synthetic names only (`cluster-a`, `user-1`), never values recorded from a real or demo XDMoD. Each rule in `rules/README.md` names the fixtures that pin it.
+Fixture values are invented, never recorded from a real or demo XDMoD. Usernames, people, projects and queues are always synthetic (`user-1`, `queue-a`). Resources may be synthetic (`cluster-a`) or a public resource's name, since those names are public; their values are still invented. Each rule in `rules/README.md` names the fixtures that pin it.

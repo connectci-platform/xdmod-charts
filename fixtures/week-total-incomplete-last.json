@@ -1,0 +1,135 @@
+{
+  "description": "Weekly job_count by queue through today, a Friday: the today cap cuts the last week, so it is incomplete and the waiting warning applies; counted still ends on Sunday; the latest data day sharpens data_through inside the last week, so that week is partial.",
+  "producers": [
+    "py"
+  ],
+  "input": {
+    "request": {
+      "realm": "Jobs",
+      "statistic": "job_count",
+      "group_by": "queue",
+      "dataset_type": "timeseries",
+      "start_date": "2026-11-09",
+      "end_date": "2026-11-27",
+      "filters_notes": [],
+      "dimension_filtered": false,
+      "offset": 0,
+      "limit": 8,
+      "unit": "Week"
+    },
+    "label": "Number of Jobs Ended",
+    "description": "Number of Jobs Ended: The total number of jobs that ended during the selected period.",
+    "today": "2026-11-27",
+    "others_count": 0,
+    "has_more": false,
+    "latest_data_day": "2026-11-26",
+    "resource_days": null,
+    "link": null,
+    "time_zone": null,
+    "instance": null,
+    "series": [
+      {
+        "name": "queue-a",
+        "values": {
+          "2026-11-09": 4,
+          "2026-11-13": 6,
+          "2026-11-16": 3,
+          "2026-11-23": 2,
+          "2026-11-26": 5
+        }
+      },
+      {
+        "name": "queue-b",
+        "values": {
+          "2026-11-10": 1
+        }
+      }
+    ]
+  },
+  "expected": {
+    "version": 1,
+    "realm": "Jobs",
+    "statistic": "job_count",
+    "group_by": "queue",
+    "dataset_type": "timeseries",
+    "requested": {
+      "start": "2026-11-09",
+      "end": "2026-11-27"
+    },
+    "counted": {
+      "start": "2026-11-09",
+      "end": "2026-11-29"
+    },
+    "last_period_incomplete": true,
+    "measure": {
+      "label": "Number of Jobs Ended",
+      "description": "The total number of jobs that ended during the selected period.",
+      "kind": "total",
+      "missing": "zero",
+      "unit": "jobs"
+    },
+    "dimension": {
+      "name": "queue",
+      "ordered": false
+    },
+    "filters": {
+      "notes": []
+    },
+    "offset": 0,
+    "others_count": 0,
+    "has_more": false,
+    "ranked_by": "value",
+    "link": null,
+    "source": "XDMoD",
+    "retrieved": "2026-11-27",
+    "unit": "Week",
+    "warnings": [
+      {
+        "code": "waiting-not-counted",
+        "text": "XDMoD counts a job when it ends, so jobs still waiting or running aren't counted, and the last period may be incomplete."
+      }
+    ],
+    "data_through": "2026-11-26",
+    "data_through_precision": "day",
+    "last_data_period_partial": true,
+    "series": [
+      {
+        "name": "queue-a",
+        "points": [
+          {
+            "start": "2026-11-09",
+            "value": 10
+          },
+          {
+            "start": "2026-11-16",
+            "value": 3
+          },
+          {
+            "start": "2026-11-23",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "name": "queue-b",
+        "points": [
+          {
+            "start": "2026-11-09",
+            "value": 1
+          },
+          {
+            "start": "2026-11-16",
+            "value": null
+          },
+          {
+            "start": "2026-11-23",
+            "value": null
+          }
+        ],
+        "data_through": "2026-11-09",
+        "data_through_precision": "period",
+        "data_through_source": "series"
+      }
+    ]
+  }
+}

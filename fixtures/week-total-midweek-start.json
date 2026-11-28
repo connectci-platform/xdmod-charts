@@ -1,0 +1,129 @@
+{
+  "description": "Weekly job_count by resource, range starting on a Wednesday: weeks start Monday, counted starts the Monday before, days before the requested start are in the first week, each week is the sum of its days, a week with no day is null.",
+  "producers": [
+    "py"
+  ],
+  "input": {
+    "request": {
+      "realm": "Jobs",
+      "statistic": "job_count",
+      "group_by": "resource",
+      "dataset_type": "timeseries",
+      "start_date": "2026-10-07",
+      "end_date": "2026-10-25",
+      "filters_notes": [],
+      "dimension_filtered": false,
+      "offset": 0,
+      "limit": 8,
+      "unit": "Week"
+    },
+    "label": "Number of Jobs Ended",
+    "description": "Number of Jobs Ended: The total number of jobs that ended during the selected period.",
+    "today": "2026-11-27",
+    "others_count": 0,
+    "has_more": false,
+    "latest_data_day": null,
+    "resource_days": null,
+    "link": null,
+    "time_zone": null,
+    "instance": null,
+    "series": [
+      {
+        "name": "cluster-a",
+        "values": {
+          "2026-10-05": 3,
+          "2026-10-06": 2,
+          "2026-10-09": 5,
+          "2026-10-12": 4,
+          "2026-10-18": 1,
+          "2026-10-20": 7
+        }
+      },
+      {
+        "name": "cluster-b",
+        "values": {
+          "2026-10-08": 2,
+          "2026-10-21": 6
+        }
+      }
+    ]
+  },
+  "expected": {
+    "version": 1,
+    "realm": "Jobs",
+    "statistic": "job_count",
+    "group_by": "resource",
+    "dataset_type": "timeseries",
+    "requested": {
+      "start": "2026-10-07",
+      "end": "2026-10-25"
+    },
+    "counted": {
+      "start": "2026-10-05",
+      "end": "2026-10-25"
+    },
+    "last_period_incomplete": false,
+    "measure": {
+      "label": "Number of Jobs Ended",
+      "description": "The total number of jobs that ended during the selected period.",
+      "kind": "total",
+      "missing": "zero",
+      "unit": "jobs"
+    },
+    "dimension": {
+      "name": "resource",
+      "ordered": false
+    },
+    "filters": {
+      "notes": []
+    },
+    "offset": 0,
+    "others_count": 0,
+    "has_more": false,
+    "ranked_by": "value",
+    "link": null,
+    "source": "XDMoD",
+    "retrieved": "2026-11-27",
+    "unit": "Week",
+    "warnings": [],
+    "data_through": "2026-10-19",
+    "data_through_precision": "period",
+    "last_data_period_partial": false,
+    "series": [
+      {
+        "name": "cluster-a",
+        "points": [
+          {
+            "start": "2026-10-05",
+            "value": 10
+          },
+          {
+            "start": "2026-10-12",
+            "value": 5
+          },
+          {
+            "start": "2026-10-19",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "name": "cluster-b",
+        "points": [
+          {
+            "start": "2026-10-05",
+            "value": 2
+          },
+          {
+            "start": "2026-10-12",
+            "value": null
+          },
+          {
+            "start": "2026-10-19",
+            "value": 6
+          }
+        ]
+      }
+    ]
+  }
+}

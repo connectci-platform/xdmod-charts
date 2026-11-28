@@ -1,0 +1,328 @@
+{
+  "description": "Monthly job_count by resource with ten series, more than the palette's eight colours: the builder passes every series through in XDMoD's order; capping is the adapter's and the client's job.",
+  "producers": [
+    "ts",
+    "py"
+  ],
+  "input": {
+    "request": {
+      "realm": "Jobs",
+      "statistic": "job_count",
+      "group_by": "resource",
+      "dataset_type": "timeseries",
+      "start_date": "2026-08-01",
+      "end_date": "2026-10-31",
+      "filters_notes": [],
+      "dimension_filtered": false,
+      "offset": 0,
+      "limit": 10,
+      "unit": "Month"
+    },
+    "label": "Number of Jobs Ended",
+    "description": "Number of Jobs Ended: The total number of jobs that ended during the selected period.",
+    "today": "2026-11-27",
+    "others_count": 0,
+    "has_more": false,
+    "latest_data_day": null,
+    "resource_days": null,
+    "link": null,
+    "time_zone": null,
+    "instance": null,
+    "series": [
+      {
+        "name": "cluster-a",
+        "values": {
+          "2026-08-01": 100,
+          "2026-09-01": 101,
+          "2026-10-01": 102
+        }
+      },
+      {
+        "name": "cluster-b",
+        "values": {
+          "2026-08-01": 90,
+          "2026-09-01": 91,
+          "2026-10-01": 92
+        }
+      },
+      {
+        "name": "cluster-c",
+        "values": {
+          "2026-08-01": 80,
+          "2026-09-01": 81,
+          "2026-10-01": 82
+        }
+      },
+      {
+        "name": "cluster-d",
+        "values": {
+          "2026-08-01": 70,
+          "2026-09-01": 71,
+          "2026-10-01": 72
+        }
+      },
+      {
+        "name": "cluster-e",
+        "values": {
+          "2026-08-01": 60,
+          "2026-09-01": 61,
+          "2026-10-01": 62
+        }
+      },
+      {
+        "name": "cluster-f",
+        "values": {
+          "2026-08-01": 50,
+          "2026-09-01": 51,
+          "2026-10-01": 52
+        }
+      },
+      {
+        "name": "cluster-g",
+        "values": {
+          "2026-08-01": 40,
+          "2026-09-01": 41,
+          "2026-10-01": 42
+        }
+      },
+      {
+        "name": "cluster-h",
+        "values": {
+          "2026-08-01": 30,
+          "2026-09-01": 31,
+          "2026-10-01": 32
+        }
+      },
+      {
+        "name": "cluster-i",
+        "values": {
+          "2026-08-01": 20,
+          "2026-09-01": 21,
+          "2026-10-01": 22
+        }
+      },
+      {
+        "name": "cluster-j",
+        "values": {
+          "2026-08-01": 10,
+          "2026-09-01": 11,
+          "2026-10-01": 12
+        }
+      }
+    ]
+  },
+  "expected": {
+    "version": 1,
+    "realm": "Jobs",
+    "statistic": "job_count",
+    "group_by": "resource",
+    "dataset_type": "timeseries",
+    "requested": {
+      "start": "2026-08-01",
+      "end": "2026-10-31"
+    },
+    "counted": {
+      "start": "2026-08-01",
+      "end": "2026-10-31"
+    },
+    "last_period_incomplete": false,
+    "measure": {
+      "label": "Number of Jobs Ended",
+      "description": "The total number of jobs that ended during the selected period.",
+      "kind": "total",
+      "missing": "zero",
+      "unit": "jobs"
+    },
+    "dimension": {
+      "name": "resource",
+      "ordered": false
+    },
+    "filters": {
+      "notes": []
+    },
+    "offset": 0,
+    "others_count": 0,
+    "has_more": false,
+    "ranked_by": "value",
+    "link": null,
+    "source": "XDMoD",
+    "retrieved": "2026-11-27",
+    "unit": "Month",
+    "warnings": [],
+    "data_through": "2026-10-01",
+    "data_through_precision": "period",
+    "last_data_period_partial": false,
+    "series": [
+      {
+        "name": "cluster-a",
+        "points": [
+          {
+            "start": "2026-08-01",
+            "value": 100
+          },
+          {
+            "start": "2026-09-01",
+            "value": 101
+          },
+          {
+            "start": "2026-10-01",
+            "value": 102
+          }
+        ]
+      },
+      {
+        "name": "cluster-b",
+        "points": [
+          {
+            "start": "2026-08-01",
+            "value": 90
+          },
+          {
+            "start": "2026-09-01",
+            "value": 91
+          },
+          {
+            "start": "2026-10-01",
+            "value": 92
+          }
+        ]
+      },
+      {
+        "name": "cluster-c",
+        "points": [
+          {
+            "start": "2026-08-01",
+            "value": 80
+          },
+          {
+            "start": "2026-09-01",
+            "value": 81
+          },
+          {
+            "start": "2026-10-01",
+            "value": 82
+          }
+        ]
+      },
+      {
+        "name": "cluster-d",
+        "points": [
+          {
+            "start": "2026-08-01",
+            "value": 70
+          },
+          {
+            "start": "2026-09-01",
+            "value": 71
+          },
+          {
+            "start": "2026-10-01",
+            "value": 72
+          }
+        ]
+      },
+      {
+        "name": "cluster-e",
+        "points": [
+          {
+            "start": "2026-08-01",
+            "value": 60
+          },
+          {
+            "start": "2026-09-01",
+            "value": 61
+          },
+          {
+            "start": "2026-10-01",
+            "value": 62
+          }
+        ]
+      },
+      {
+        "name": "cluster-f",
+        "points": [
+          {
+            "start": "2026-08-01",
+            "value": 50
+          },
+          {
+            "start": "2026-09-01",
+            "value": 51
+          },
+          {
+            "start": "2026-10-01",
+            "value": 52
+          }
+        ]
+      },
+      {
+        "name": "cluster-g",
+        "points": [
+          {
+            "start": "2026-08-01",
+            "value": 40
+          },
+          {
+            "start": "2026-09-01",
+            "value": 41
+          },
+          {
+            "start": "2026-10-01",
+            "value": 42
+          }
+        ]
+      },
+      {
+        "name": "cluster-h",
+        "points": [
+          {
+            "start": "2026-08-01",
+            "value": 30
+          },
+          {
+            "start": "2026-09-01",
+            "value": 31
+          },
+          {
+            "start": "2026-10-01",
+            "value": 32
+          }
+        ]
+      },
+      {
+        "name": "cluster-i",
+        "points": [
+          {
+            "start": "2026-08-01",
+            "value": 20
+          },
+          {
+            "start": "2026-09-01",
+            "value": 21
+          },
+          {
+            "start": "2026-10-01",
+            "value": 22
+          }
+        ]
+      },
+      {
+        "name": "cluster-j",
+        "points": [
+          {
+            "start": "2026-08-01",
+            "value": 10
+          },
+          {
+            "start": "2026-09-01",
+            "value": 11
+          },
+          {
+            "start": "2026-10-01",
+            "value": 12
+          }
+        ]
+      }
+    ]
+  }
+}
